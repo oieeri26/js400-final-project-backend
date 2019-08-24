@@ -20,7 +20,8 @@ app.use(require('cors')({
 
 // Routes
 app.use('/api', require('./api/routes/auth'))
-app.use('/api/users', require('./api/routes/users'))
+app.use('/api', require('./api/routes/students'))
+// app.use('/api', require('./api/routes/admins'))
 
 // Not Found Handler
 app.use((req, res, next) => {

@@ -30,13 +30,13 @@ const reset = async () => {
         projectDescription: 'Final Project for js400!'
       }]
     },
-    {
-      email: 'admin@email.com',
-      password: bcrypt.hashSync('password', 10),
-      admin: true,
-      firstName: 'Tom',
-      lastName: 'Steel'
-     }
+    // {
+    //   email: 'admin@email.com',
+    //   password: bcrypt.hashSync('password', 10),
+    //   admin: true,
+    //   firstName: 'Tom',
+    //   lastName: 'Steel'
+    //  }
   ])
 }
 

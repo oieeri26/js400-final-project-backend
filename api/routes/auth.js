@@ -23,7 +23,9 @@ router.post('/login', async (req, res, next) => {
   const user = await User.findOne({ email })
   if (user) {
     const valid = await bcrypt.compare(password, user.password)
+    const admin = user.admin
     if (valid) {
+      console.log(admin)
       const status = 200
       const response = 'You have successful logged in.'
       const token = generateToken(user._id)

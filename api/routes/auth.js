@@ -22,7 +22,6 @@ router.get('/profile', async (req, res, next) => {
 router.post('/login', async (req, res, next) => {
   const { email, password } = req.body
   const user = await User.findOne({ email })
-  // console.log(user)
   if (user) {
     const valid = await bcrypt.compare(password, user.password)
     if (valid) {
@@ -41,6 +40,7 @@ router.post('/login', async (req, res, next) => {
 
 router.post('/signup', async (req, res, next) => {
   const { email, password, firstName, lastName } = req.body
+  const admin = false
   const rounds = 10
   const hashed = await bcrypt.hash(password, rounds)
 
@@ -53,25 +53,9 @@ router.post('/signup', async (req, res, next) => {
   }
 
   const status = 201
-  const user = await User.create({ email, password: hashed, firstName, lastName })
+  const user = await User.create({ email, password: hashed, firstName, lastName, admin })
   const token = generateToken(user._id)
   res.status(status).json({ status, token })
 })
-
-// isLoggedIn,
-
-router.get('/:userId', isLoggedIn, async (req, res, next) => {
-  const status = 200
-  console.log(req.params.userId)
-  const query = { _id: req.params.userId }
-  const response = await User.find()
-  res.json({ status, response })
-})
-
-// router.get('/students', isLoggedIn, async (req, res, next) => {
-//   const status = 200
-//   const response = await User.find(req.query).select(excludeKeys)
-//   res.json({ status, response })
-// })
 
 module.exports = router

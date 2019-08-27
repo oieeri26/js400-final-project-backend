@@ -7,7 +7,8 @@ const excludeKeys = '-__v -password'
 
 router.get('/', isLoggedIn, async (req, res, next) => {
   const status = 200
-  const response = await User.find(req.query).select(excludeKeys)
+  const query = { admin: false }
+  const response = await User.find(query).select(excludeKeys) //req.query
   res.json({ status, response })
 })
 

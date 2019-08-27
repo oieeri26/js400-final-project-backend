@@ -31,14 +31,11 @@ router.put('/:postId', isLoggedIn, isSameUser, async (req, res, next) => {
 
 router.delete('/:postId', isLoggedIn, isSameUser, async (req, res, next) => {
   const status = 200
-
   const { postId, userId } = req.params
   const query = { _id: userId }
   const user = await User.findOne(query)
-
   user.posts = user.posts.filter(post => post.id !== postId)
   await user.save()
-
   res.json({ status, response: user })
 })
 

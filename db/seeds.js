@@ -11,8 +11,9 @@ const reset = async () => {
   return User.create([{
       email: 'student@email.com',
       password: bcrypt.hashSync('password', 10),
-      firstName: 'Time',
+      firstName: 'Tim',
       lastName: 'Smith',
+      admin: false,
       assignments: [{
         assignmentTitle: 'Full Stack Final Project',
         projectLink: 'www.project.com',
@@ -24,6 +25,7 @@ const reset = async () => {
       password: bcrypt.hashSync('password', 10),
       firstName: 'Erin',
       lastName: 'Thompson',
+      admin: false,
       assignments: [{
         assignmentTitle: 'Full Stack Final Project',
         projectLink: 'www.project.com',

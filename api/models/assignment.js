@@ -7,11 +7,8 @@ const schema = new mongoose.Schema({
     type: String,
     min: 10
   },
-  content: {
-    type: String,
-    min: 10
-  },
-  emotion: String
+  grade: Number,
+  total: Number
 }, { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } })
 
 module.exports = schema

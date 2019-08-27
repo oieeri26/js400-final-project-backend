@@ -2,6 +2,7 @@ const router = require('express').Router()
 const bcrypt = require('bcrypt')
 const User = require('../models/user')
 const { decodeToken, generateToken } = require('../lib/token')
+const { isLoggedIn, isSameUser } = require('../middleware/auth')
 
 router.get('/profile', async (req, res, next) => {
   try {
@@ -21,11 +22,10 @@ router.get('/profile', async (req, res, next) => {
 router.post('/login', async (req, res, next) => {
   const { email, password } = req.body
   const user = await User.findOne({ email })
+  // console.log(user)
   if (user) {
     const valid = await bcrypt.compare(password, user.password)
-    const admin = user.admin
     if (valid) {
-      console.log(admin)
       const status = 200
       const response = 'You have successful logged in.'
       const token = generateToken(user._id)
@@ -57,5 +57,21 @@ router.post('/signup', async (req, res, next) => {
   const token = generateToken(user._id)
   res.status(status).json({ status, token })
 })
+
+// isLoggedIn,
+
+router.get('/:userId', isLoggedIn, async (req, res, next) => {
+  const status = 200
+  console.log(req.params.userId)
+  const query = { _id: req.params.userId }
+  const response = await User.find()
+  res.json({ status, response })
+})
+
+// router.get('/students', isLoggedIn, async (req, res, next) => {
+//   const status = 200
+//   const response = await User.find(req.query).select(excludeKeys)
+//   res.json({ status, response })
+// })
 
 module.exports = router

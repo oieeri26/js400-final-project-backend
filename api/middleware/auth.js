@@ -21,8 +21,8 @@ const isLoggedIn = (req, _res, next) => {
 const isSameUser = (req, _res, next) => {
   const id = req.params.userId
   const payload = decodeToken(req.token)
+  console.log(id)
   if (payload.id === id) return next()
-
   const error = new Error(`You are not authorized to access this route.`)
   error.status = 401
   next(error)

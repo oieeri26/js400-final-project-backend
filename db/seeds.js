@@ -17,7 +17,9 @@ const reset = async () => {
       assignments: [{
         assignmentTitle: 'Full Stack Final Project',
         projectLink: 'www.project.com',
-        projectDescription: 'Final Project for js400!'
+        projectDescription: 'Final Project for js400!',
+        grade: 40,
+        total: 50
       }]
     },
     {
@@ -29,7 +31,121 @@ const reset = async () => {
       assignments: [{
         assignmentTitle: 'Full Stack Final Project',
         projectLink: 'www.project.com',
-        projectDescription: 'Final Project for js400!'
+        projectDescription: 'Final Project for js400!',
+        grade: 34,
+        total: 50
+      }]
+    },
+    {
+      email: 'teridactyl@email.com',
+      password: bcrypt.hashSync('password', 10),
+      firstName: 'Teri',
+      lastName: 'Dactyl',
+      admin: false,
+      assignments: [{
+        assignmentTitle: 'Full Stack Final Project',
+        projectLink: 'www.project.com',
+        projectDescription: 'Final Project for js400!',
+        grade: 45,
+        total: 50
+      }]
+    },
+    {
+      email: 'perryscope@email.com',
+      password: bcrypt.hashSync('password', 10),
+      firstName: 'Perry',
+      lastName: 'Scope',
+      admin: false,
+      assignments: [{
+        assignmentTitle: 'Full Stack Final Project',
+        projectLink: 'www.project.com',
+        projectDescription: 'Final Project for js400!',
+        grade: 50,
+        total: 50
+      }]
+    },
+    {
+      email: 'skyeblue@email.com',
+      password: bcrypt.hashSync('password', 10),
+      firstName: 'Skye',
+      lastName: 'Blue',
+      admin: false,
+      assignments: [{
+        assignmentTitle: 'Full Stack Final Project',
+        projectLink: 'www.project.com',
+        projectDescription: 'Final Project for js400!',
+        grade: 42,
+        total: 50
+      }]
+    },
+    {
+      email: 'slymeedentalfloss@email.com',
+      password: bcrypt.hashSync('password', 10),
+      firstName: 'Sly',
+      lastName: 'Meedentalfloss',
+      admin: false,
+      assignments: [{
+        assignmentTitle: 'Full Stack Final Project',
+        projectLink: 'www.project.com',
+        projectDescription: 'Final Project for js400!',
+        grade: null,
+        total: null
+      }]
+    },
+    {
+      email: 'artdecco@email.com',
+      password: bcrypt.hashSync('password', 10),
+      firstName: 'Art',
+      lastName: 'Decco',
+      admin: false,
+      assignments: [{
+        assignmentTitle: 'Full Stack Final Project',
+        projectLink: 'www.project.com',
+        projectDescription: 'Final Project for js400!',
+        grade: null,
+        total: null
+      }]
+    },
+    {
+      email: 'simonsais@email.com',
+      password: bcrypt.hashSync('password', 10),
+      firstName: 'Simon',
+      lastName: 'Sais',
+      admin: false,
+      assignments: [{
+        assignmentTitle: 'Full Stack Final Project',
+        projectLink: 'www.project.com',
+        projectDescription: 'Final Project for js400!',
+        grade: null,
+        total: null
+      }]
+    },
+    {
+      email: 'gregarias@email.com',
+      password: bcrypt.hashSync('password', 10),
+      firstName: 'Greg',
+      lastName: 'Arias',
+      admin: false,
+      assignments: [{
+        assignmentTitle: 'Full Stack Final Project',
+        projectLink: 'www.project.com',
+        projectDescription: 'Final Project for js400!',
+        grade: null,
+        total: null
+      }]
+    },
+    {
+      email: 'markateer@email.com',
+      password: bcrypt.hashSync('password', 10),
+      firstName: 'Mark',
+      lastName: 'Ateer',
+      admin: false,
+      assignments: [{
+        assignmentTitle: 'Full Stack Final Project',
+        projectLink: 'www.project.com',
+        projectDescription: 'Final Project for js400!',
+        grade: null,
+        total: null
       }]
     },
     {
